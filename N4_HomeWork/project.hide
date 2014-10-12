@@ -1,6 +1,6 @@
 {
      "type" : 1
-    ,"target" : null
+    ,"target" : 0
     ,"name" : "N4_HomeWork"
     ,"main" : null
     ,"projectPackage" : ""
@@ -18,15 +18,24 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 0
+            ,"activeLine" : 6
+        }
+        ,{
+             "path" : "Source/Game.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 5
         }
     ]
-    ,"activeFile" : "Source/Main.hx"
+    ,"activeFile" : "Source/Game.hx"
     ,"openFLTarget" : "flash"
     ,"openFLBuildMode" : "Debug"
     ,"runActionType" : 2
     ,"runActionText" : "haxelib run lime run \"%path%\" flash"
-    ,"buildActionCommand" : "haxelib run lime build \"%path%\" flash --connect 5000"
+    ,"buildActionCommand" : "haxelib run lime build \"%path%\" flash -debug -Dfdb --connect 5000"
     ,"hiddenItems" : [
 
     ]

@@ -4,11 +4,18 @@
 	<meta title="N4HomeWork" package="com.example.n4homework" version="1.0.0" company="Company Name" />
 	<app main="Main" path="Export" file="N4HomeWork" />
 	
+	<window background="#000000" fps="60" />
+	<window width="800" height="480" unless="mobile" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+	
 	<source path="Source" />
 	
 	<haxelib name="openfl" />
 	
 	<assets path="Assets" rename="assets" exclude="openfl.svg" />
 	<icon path="Assets/openfl.svg" />
+	
+	<window width="800" height="480" unless="mobile" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
 	
 </project>

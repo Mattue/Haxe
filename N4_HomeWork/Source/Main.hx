@@ -1,14 +1,14 @@
 package;
+// 
+import openfl.display.Sprite;
+import openfl.events.Event;
+import openfl.Lib;
 
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.Lib;
+import openfl.display.BitmapData;
+import openfl.display.Sprite;
+import openfl.Assets;
+import openfl.display.Bitmap;
 
-/**
-::if (author != ""):: * @author ::author::::end::
-::if (license != ""):: * ::license::::end::
-::if (url != ""):: * ::url::::end::
- */
 
 class Main extends Sprite 
 {
@@ -17,49 +17,66 @@ class Main extends Sprite
 	/* ENTRY POINT */
 
 	function resize(e) 
-		{
-			if (!inited) init();
-			// else (resize or orientation change)
-		}
+	{
+		if (!inited) init();
+		// else (resize or orientation change)
+	}
 
+	
+	var _game:Game;
+	
+	
 	function init() 
-		{
-			if (inited) return;
-			inited = true;
+	{
+		if (inited) return;
+		inited = true;
 
-			// (your code here)
+		// (your code here)
 
-			// Stage:
-			// stage.stageWidth x stage.stageHeight @ stage.dpiScale
-
-			// Assets:
-			// nme.Assets.getBitmapData("img/assetname.jpg");
-		}
+		startNewGame();			
+		
+		// Stage:
+		// stage.stageWidth x stage.stageHeight @ stage.dpiScale
+		// Assets:
+		// nme.Assets.getBitmapData("img/assetname.jpg");
+	}
 			
-		/* SETUP */
-
-		public function new() 
+	public function startNewGame ()
+	{
+		if (_game != null)
 			{
-				super(); 
-				addEventListener(Event.ADDED_TO_STAGE, added);
+				//removing game
 			}
+		_game = new Game();
+		addChild(_game);
+	}
 
-		function added(e) 
-			{
-				removeEventListener(Event.ADDED_TO_STAGE, added);
-				stage.addEventListener(Event.RESIZE, resize);
-				#if ios
-				haxe.Timer.delay(init, 100); // iOS 6
-				#else
-				init();
-				#end
-			}
+	
 
-		public static function main() 
-			{
-				// static entry point
-				Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
-				Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
-				Lib.current.addChild(new Main());
-			}
+	/* SETUP */
+
+	public function new() 
+	{
+		super(); 
+		addEventListener(Event.ADDED_TO_STAGE, added);
+	}
+
+	function added(e) 
+	{
+		removeEventListener(Event.ADDED_TO_STAGE, added);
+		stage.addEventListener(Event.RESIZE, resize);
+		#if ios
+		haxe.Timer.delay(init, 100); // iOS 6
+		#else
+		init();
+		#end
+	}
+
+	public static function main() 
+	{
+		// static entry point
+		Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
+		Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
+		Lib.current.addChild(new Main());
+	}
 }
