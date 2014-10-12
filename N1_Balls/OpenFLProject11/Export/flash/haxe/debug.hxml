@@ -1,0 +1,19 @@
+-main ApplicationMain 
+-cp /usr/lib/haxe/lib/openfl/2,0,1/
+-D openfl=2.0.1
+-cp /usr/lib/haxe/lib/actuate/1,7,5/
+-D actuate=1.7.5
+-cp Source
+-cp /usr/lib/haxe/lib/openfl/2,0,1/backends/flash
+-cp /usr/lib/haxe/lib/openfl/2,0,1/backends/flash
+-D tools=1.5.7
+-D openfl-flash
+-D fdb
+-D web
+--connect
+5000
+-swf-version 11.2
+-swf Export/flash/bin/OpenFLProject11.swf
+-swf-header 800:480:60:000000
+-cp Export/flash/haxe
+-debug

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="OpenFLProject11" package="com.example.openflproject11" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="OpenFLProject11" />
+	
+	<window background="#000000" fps="60" />
+	<window width="800" height="480" unless="mobile" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+	
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	
+	<assets path="Assets/img" rename="img" exclude="openfl.svg" />
+	<icon path="Assets/openfl.svg" />
+		
+	
+	<window width="800" height="480" unless="mobile" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+	
+</project>
